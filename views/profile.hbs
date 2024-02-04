@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css' />
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+	<nav>
+		<h4>CareTaker Portal</h4>
+		<ul>
+			<li><a href='/logout'>Logout</a></li>
+		</ul>
+	</nav>
+	<div class="body_section">
+		<div class="profile">
+			<div class="image">
+				<img src="./images/logo.jpg" width="120" height="120" alt="profile_picture" />
+			</div>
+			<div class="details patientInfo">
+				{{#each careTeamData}}
+				<div class="item">
+					<label>CareTaker Name:</label>
+					<div class="value">{{name}}</div>
+				</div>
+				<div class="item">
+					<label>Email ID</label>
+					<div class="value">{{email}}</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+		<div class="summary">
+			<div id="care_team">
+				<div class="section_label">Patients List</div>
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>CareTaker</th>
+							<th>Email</th>
+							<th>profile</th>
+						</tr>
+					</thead>
+					<tbody class="careteamInfo">
+						{{#each patientsData}}
+						<tr>
+							<td>{{id}}</td>
+							<td>{{name}}</td>
+							<td>{{email}}</td>
+							<td><a href="/patient">view</a></td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
