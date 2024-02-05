@@ -64,8 +64,8 @@
             <div class="menu_option" id="option_2">Care Team</div>
             <div class="menu_option" id="option_3">Condition</div>
             <div class="menu_option" id="option_4">Medication</div>
-            <div class="menu_option" id="option_5">Allergies</div>
-            <div class="menu_option" id="option_6">Labs</div>
+            {{!-- <div class="menu_option" id="option_5">Allergies</div> --}}
+            <div class="menu_option" id="option_6">Analytics</div>
         </div>
         <div class="summary">
             <div id="care_team">
@@ -139,13 +139,36 @@
                     </tbody>
                 </table>
             </div>
-            <div id="allergies">
+            {{!-- <div id="allergies">
                 <div class="section_label">Allergies</div>
                 No Allergies Identified
-            </div>
+            </div> --}}
             <div id="lab_tests">
                 <div class="section_label">Analytics</div>
-                No Tests are conducted.
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Report</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Time taken for the patient to ingest Medication
+                            </td>
+                            <td>1 hr</td>
+                        </tr>
+                        <tr>
+                            <td>medication ingestion failure rate</td>
+                            <td>1 hr</td>
+                        </tr>
+                        <tr>
+                            <td>total ingestion time</td>
+                            <td>1 hr</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

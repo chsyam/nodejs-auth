@@ -28,7 +28,7 @@ db.connect((error) => {
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE', 'UPDATE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(session({
-    secret: 'hii',
+    secret: 'anika',
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -138,7 +138,7 @@ app.get('/api/patients', (req, res) => {
 });
 
 app.get('/api/careteam', (req, res) => {
-    const query = 'SELECT * FROM careteam';
+    const query = 'SELECT * FROM careteam limit 1';
     db.query(query, (error, results) => {
         if (error) throw error;
         res.json(results);
