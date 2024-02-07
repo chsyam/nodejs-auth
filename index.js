@@ -133,6 +133,7 @@ app.get('/api/patients', (req, res) => {
     });
 });
 
+
 app.get('/api/careteam', (req, res) => {
     const query = 'SELECT * FROM careteam limit 1';
     db.query(query, (error, results) => {
