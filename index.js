@@ -143,10 +143,10 @@ app.get('/api/careteam', (req, res) => {
 app.get('/patient', async (req, res) => {
     if (req.session.user) {
         try {
-            const conditionsData = await axios.get('http://localhost:5000/api/conditions');
-            const patientsData = await axios.get('http://localhost:5000/api/patients');
-            const medicationData = await axios.get('http://localhost:5000/api/medication');
-            const careTeamData = await axios.get('http://localhost:5000/api/careteam');
+            const conditionsData = await axios.get('http:testauth-cwn8.onrender.com/api/conditions');
+            const patientsData = await axios.get('http:testauth-cwn8.onrender.com/api/patients');
+            const medicationData = await axios.get('http:testauth-cwn8.onrender.com/api/medication');
+            const careTeamData = await axios.get('http:testauth-cwn8.onrender.com/api/careteam');
             return res.render('patient', {
                 patientsData: patientsData.data,
                 medicationData: medicationData.data,
@@ -164,8 +164,8 @@ app.get('/patient', async (req, res) => {
 app.get('/profile', async (req, res) => {
     if (req.session.user) {
         try {
-            const patientsData = await axios.get('http://localhost:5000/api/patients');
-            const careTeamData = await axios.get('http://localhost:5000/api/careteam');
+            const patientsData = await axios.get('https://testauth-cwn8.onrender.com/api/patients');
+            const careTeamData = await axios.get('https://testauth-cwn8.onrender.com/api/careteam');
             return res.render('profile', {
                 patientsData: patientsData.data,
                 careTeamData: careTeamData.data,
