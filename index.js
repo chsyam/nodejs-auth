@@ -7,6 +7,8 @@ const axios = require('axios');
 const app = express();
 const publicDirectory = path.join(__dirname, './public');
 
+const PORT = process.env.PORT || 5000;
+
 const db = mysql.createConnection({
     host: "caretaker-portal.c5888ae8yqbj.us-east-1.rds.amazonaws.com",
     user: "admin",
@@ -116,7 +118,7 @@ app.get('/api/conditions', (req, res) => {
 });
 
 app.get('/api/medication', (req, res) => {
-    const query = 'SELECT * FROM medication';
+    const query = 'SELECT * FROM medicine';
     db.query(query, (error, results) => {
         if (error) throw error;
         res.json(results);
@@ -139,14 +141,13 @@ app.get('/api/careteam', (req, res) => {
     });
 });
 
-
 app.get('/patient', async (req, res) => {
     if (req.session.user) {
         try {
-            const conditionsData = await axios.get('https://testauth-cwn8.onrender.com/api/conditions');
-            const patientsData = await axios.get('https://testauth-cwn8.onrender.com/api/patients');
-            const medicationData = await axios.get('https://testauth-cwn8.onrender.com/api/medication');
-            const careTeamData = await axios.get('https://testauth-cwn8.onrender.com/api/careteam');
+            const conditionsData = await axios.get('http://localhost:5000/api/conditions');
+            const patientsData = await axios.get('http://localhost:5000/api/patients');
+            const medicationData = await axios.get('http://localhost:5000/api/medication');
+            const careTeamData = await axios.get('http://localhost:5000/api/careteam');
             return res.render('patient', {
                 patientsData: patientsData.data,
                 medicationData: medicationData.data,
@@ -164,8 +165,8 @@ app.get('/patient', async (req, res) => {
 app.get('/profile', async (req, res) => {
     if (req.session.user) {
         try {
-            const patientsData = await axios.get('https://testauth-cwn8.onrender.com/api/patients');
-            const careTeamData = await axios.get('https://testauth-cwn8.onrender.com/api/careteam');
+            const patientsData = await axios.get('http://localhost:5000/api/patients');
+            const careTeamData = await axios.get('http://localhost:5000/api/careteam');
             return res.render('profile', {
                 patientsData: patientsData.data,
                 careTeamData: careTeamData.data,
@@ -178,4 +179,6 @@ app.get('/profile', async (req, res) => {
     }
 });
 
-app.listen(process.env.PORT || 5000);
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`)
+});
