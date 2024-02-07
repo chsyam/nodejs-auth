@@ -2,10 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 const mysql = require('mysql');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
 const session = require('express-session');
-const ejs = require('ejs');
 const axios = require('axios');
 
 const app = express();

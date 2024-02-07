@@ -29,7 +29,7 @@ nav ul li a:hover {
     margin: 20px auto;
     border: 1px solid rgb(219, 205, 205);
     box-shadow: 1px 1px 5px gray;
-    border-radius: 5px;
+        /* border-radius: 5px; */
 }
 
 .profile {
@@ -45,7 +45,7 @@ nav ul li a:hover {
 
 .profile .image img {
     border: 2px solid rgb(168, 161, 161);
-    border-radius: 5px;
+    /* border-radius: 5px; */
     padding: 5px;
 }
 
@@ -92,7 +92,6 @@ nav ul li a:hover {
     font-weight: 500;
     border: 1px solid gray;
     cursor: pointer;
-
     width: 120px;
     text-align: center;
 }
@@ -102,11 +101,11 @@ nav ul li a:hover {
 }
 
 .summary {
-    width: 90%;
+    /* width: 90%; */
     border: 2px solid gray;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin: 30px auto;
-    box-shadow: 1px 1px 5px gray;
+    box-shadow: 1px 1px 2px gray;
 }
 
 .summary #care_team,
@@ -133,7 +132,7 @@ nav ul li a:hover {
 
 .section_label:nth-child(1) {
     border-top: none;
-    border-radius: 10px 10px 0 0;
+    /* border-radius: 10px 10px 0 0; */
 }
 
 table tbody td,
@@ -143,6 +142,9 @@ table {
     border-collapse: collapse;
     padding: 5px;
     font-size: 18px;
+}
+table {
+    margin: 20px;
 }
 
 .summary #care_team table,

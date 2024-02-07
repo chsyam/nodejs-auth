@@ -120,20 +120,22 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Medication Name</th>
-                            <th>Dosage</th>
-                            <th>Shedule</th>
-                            <th>Time Taken</th>
+                            <th>NDC</th>
+                            <th>Box</th>
+                            <th>Quantity</th>
+                            <th>Brand Name</th>
+                            <th>Generic Name</th>
                         </tr>
                     </thead>
                     <tbody class="medicationInfo">
                         {{#each medicationData}}
                         <tr>
                             <td>{{id}}</td>
-                            <td>{{name}}</td>
-                            <td>{{dosage}}</td>
-                            <td>{{shedule}}</td>
-                            <td>{{timetotake}}</td>
+                            <td>{{ndc}}</td>
+                            <td>{{box}}</td>
+                            <td>{{quantity}}</td>
+                            <td>{{brand_name}}</td>
+                            <td>{{generic_name}}</td>
                         </tr>
                         {{/each}}
                     </tbody>
@@ -148,24 +150,62 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Report</th>
+                            <th>id</th>
+                            <th>generic_name</th>
+                            <th>alarm response time</th>
+                            <th>medication ingestion failure rate</th>
+                            <th>ingestion time per medication</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                Time taken for the patient to ingest Medication
-                            </td>
-                            <td>1 hr</td>
+                            <td>1</td>
+                            <td>SILICEA</td>
+                            <td>5 mins</td>
+                            <td>2%</td>
+                            <td>1 min</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>NAPROXEN</td>
+                                <td>7 mins</td>
+                                <td>5%</td>
+                                <td>2 mins</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>acetaminophen</td>
+                                <td>4 mins</td>
+                                <td>3%</td>
+                                <td>3 mins</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>LIDOCAINE</td>
+                                <td>8 mins</td>
+                                <td>1%</td>
+                                <td>2 mins</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>IBUPROFIN</td>
+                                <td>6 mins</td>
+                                <td>4%</td>
+                                <td>2 mins</td>
                         </tr>
                         <tr>
-                            <td>medication ingestion failure rate</td>
-                            <td>1 hr</td>
+                            <td>6</td>
+                            <td>GLYCERIN</td>
+                            <td>8 mins</td>
+                            <td>2%</td>
+                            <td>4 mins</td>
                         </tr>
                         <tr>
-                            <td>total ingestion time</td>
-                            <td>1 hr</td>
+                            <td>7</td>
+                            <td>SALICYLIC ACID</td>
+                            <td>9 mins</td>
+                            <td>1%</td>
+                            <td>3 mins</td>
                         </tr>
                     </tbody>
                 </table>
