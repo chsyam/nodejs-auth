@@ -11,10 +11,10 @@ const publicDirectory = path.join(__dirname, './public');
 dotenv.config({ path: './.env' });
 
 const db = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    host: "caretaker-portal.c5888ae8yqbj.us-east-1.rds.amazonaws.com",
+    user: "admin",
+    password: "AnikaAWS123",
+    database: "Caretakerportal"
 })
 
 db.connect((error) => {
