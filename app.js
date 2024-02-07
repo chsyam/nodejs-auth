@@ -1,5 +1,4 @@
 const express = require('express');
-const dotenv = require('dotenv');
 const path = require('path');
 const mysql = require('mysql');
 const session = require('express-session');
@@ -7,8 +6,6 @@ const axios = require('axios');
 
 const app = express();
 const publicDirectory = path.join(__dirname, './public');
-
-dotenv.config({ path: './.env' });
 
 const db = mysql.createConnection({
     host: "caretaker-portal.c5888ae8yqbj.us-east-1.rds.amazonaws.com",
