@@ -180,6 +180,6 @@ app.get('/profile', async (req, res) => {
     }
 });
 
-app.listen(80, () => {
+app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`)
 });
